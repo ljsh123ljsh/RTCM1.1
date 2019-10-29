@@ -10,4 +10,14 @@ async def con():
     line = await reader.readline()
     if line.deccode() == '\r\n':
         print('rrr'*5)
-    print('{} header > {}'.format(host, line.decode().rstrip()))
+    print('header > {}'.format( line.decode().rstrip()))
+    writer.close()
+if __name__ == '__main__':
+    con()
+
+
+host_list = ['www.shiyanlou.com', 'www.sohu.com', 't.tt']   # 主机列表
+loop = asyncio.get_event_loop()                             # 事件循环
+tasks = asyncio.wait([wget(host) for host in host_list])    # 任务收集器
+loop.run_until_complete(tasks)                              # 阻塞运行任务
+loop.close()                                                # 关闭事件循环
