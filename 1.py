@@ -1,22 +1,9 @@
-import asyncio
-def consumer():
-    r = ''
-    while True:
-        n = yield r
-        if not n:
-            return
-        print('[CONSUMER] Consuming %s...' % n)
-        r = '200 OK'
+from re import search
 
-def produce(c):
-    c.send(None)
-    n = 0
-    while n < 5:
-        n = n + 1
-        print('[PRODUCER] Producing %s...' % n)
-        r = c.send(n)
-        print('[PRODUCER] Consumer return: %s' % r)
-    c.close()
-
-c = consumer()
-produce(c)
+x = 'abcdefg'
+m = search('t', x)
+print(m)
+if m is None:
+    print('d')
+else:
+    print('f')

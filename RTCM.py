@@ -9,6 +9,10 @@ from stable.ClientReceiver import ClientReceiver as cr
 class RTCM:
     def MSM4(self, data):
         # 12bits参考站ID； 30bitsGNSS历元； 1bit多点文标志； 7bits保留位； 2bits时钟校准标志； 2bits拓展时钟标志； 1bitGNSS平滑类型标志； 3bitsGNSS平滑区间  共61bits省略
+        ID = data[12:24]
+        print("参考站ID = {}".format(cd(ID).convertdecimal()))
+        gnss_liyuan = data[24:24+30]
+        print("GNSS历元 = {}".format(cd(gnss_liyuan).convertdecimal()))
         gnss_sta = data[73:74 + 64]  # 卫星掩码64bits
         sat = Map('1', gnss_sta)
         Nsat = sat.map_amount()  # 卫星数

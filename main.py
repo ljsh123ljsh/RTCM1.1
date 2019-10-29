@@ -4,7 +4,7 @@ from RTCM import RTCM
 
 if __name__ == '__main__':
 
-    file = open('g3.txt', 'r', encoding='utf-8')
+    file = open('g1.txt', 'r', encoding='utf-8')
     content = file.read()
     content = content.replace('\n', '').replace(' ', '')
     header = 'D30'
@@ -33,6 +33,7 @@ if __name__ == '__main__':
         print("RTCM格式：{}".format(int(rtcm_type, base=2)))
         print("比特数：{};字节数:{}".format(length*8, length))
         if int(rtcm_type, base=2) in [1074, 1084, 1094, 1114, 1124]:    # 1074-GPS, 1084-GLONASS, 1094-GALILEO, 1114-QZZSS, 1124-BDS
+            print(data)
             RTCM().MSM4(data)
         elif int(rtcm_type, base=2) == 1005:
             RTCM().rtcm1005(data)

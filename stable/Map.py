@@ -1,4 +1,5 @@
 from re import findall
+from re import search
 class Map:
     def __init__(self, header, string):
         '''
@@ -12,6 +13,13 @@ class Map:
         :return: 返回匹配到的个数
         '''
         return len(findall(self.header, self.string))
+    def map_first(self):
+        '''
+        :return: 匹配第一个的位置
+        '''
+        addr = search(self.header, self.string)
+        return addr
+
     def map_id(self, add=True):
         '''
         :param add: 返回的index列表是否加1
