@@ -41,9 +41,7 @@ def map_d30(content):
         yield data
         content = content[index[1] + 3 + length*2:]
 
-
-
-if __name__ == '__main__':
+def main():
     data_gen = map_d30(x)
     '''
     每条信息不包括d30，从d30后的长度开始解析
@@ -74,5 +72,8 @@ if __name__ == '__main__':
         else:
             print("暂不支持")
             continue
+
+if __name__ == '__main__':
+    main()
 
 
