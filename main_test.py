@@ -37,14 +37,14 @@ def map_d30(content):
             break
         index = index.span()
         length = int(content[index[1]:index[1]+3], base=16)
-        data = content[index[1]:index[1]+3+length*2]
+        data = content[index[0]:index[1]+3+length*2]
         yield data
         content = content[index[1] + 3 + length*2:]
 
-def main():
+def analyse():
     data_gen = map_d30(x)
     '''
-    每条信息不包括d30，从d30后的长度开始解析
+    每条信息包括d30，从d30开始解析
     '''
     while 1:
         try:
@@ -53,6 +53,7 @@ def main():
             print("——" * 30)
             print('COMPLETE')
             break
+        data = data[3:]
         length = int(data[0:3], base=16)
         data = data[3:]
         supp = Tool.supplehead(data[0])
@@ -74,6 +75,6 @@ def main():
             continue
 
 if __name__ == '__main__':
-    main()
+    analyse()
 
 

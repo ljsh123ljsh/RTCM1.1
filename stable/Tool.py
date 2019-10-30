@@ -93,4 +93,20 @@ def XYZ2BLH(X, Y, Z):
     # print('B={0:.9f}\nL={1:.9f}\nH={2:.9f}'.format(B, L, H))
     return k
 
+def map_d30(content):
+    '''
+    :param content: 一个16进制以太帧
+    :return: 返回生成器yield:d30
+    '''
+    header = 'd30'
+    content = content.replace('\n', '').replace(' ', '')
+    while 1:
+        index = Map(header, content).map_first()
+        if index is None:
+            break
+        index = index.span()
+        length = int(content[index[1]:index[1]+3], base=16)
+        data = content[index[0]:index[1]+3+length*2]
+        yield data
+        content = content[index[1] + 3 + length*2:]
 

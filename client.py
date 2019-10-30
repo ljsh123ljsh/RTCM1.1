@@ -1,7 +1,7 @@
 import asyncio
 import time
 import base64
-from gzip import decompress
+from binascii import b2a_hex
 
 # 定义协程函数，标志为async，await需要asyncio一起使用
 async def clientGL(x):
@@ -24,10 +24,10 @@ async def clientGL(x):
         # print(line)
         if line == b'\r\n':
             break
-        result = line.decode('utf-8').rstrip()
-        print(result)
+        # result = line.decode('utf-8').rstrip()
+        print(line)
         # 返回信息为 ICY 200 OK 时，发送GGA数据
-        if result == 'ICY 200 OK':
+        if line == b'ICY 200 OK\r\n':
             while 1:
                 # 获取不同时间段的GGA，并转换为字节流
                 a = time.strftime('%H%M%S.%S', time.localtime(time.time()))
@@ -40,6 +40,7 @@ async def clientGL(x):
                 # 接收差分数据，方法同Socket.recv(1024)
                 Msg = await reader.read(1024)
                 # 打印差分数据，根据需要选择是否屏蔽
+                Msg = b2a_hex(Msg)
                 print(Msg)
                 # print(decompress(Msg).decode('utf-8'))
                 # print(str(Msg))
@@ -54,7 +55,7 @@ async def clientGL(x):
 # 创建一个默认的事件循环
 loop = asyncio.get_event_loop()
 # 建立task任务，[]里增加协程函数，并发数为5000
-task0 = [clientGL(x) for x in range(500)]
+task0 = [clientGL(x) for x in range(5)]
 # 运行事件循环
 loop.run_until_complete(asyncio.wait(task0))
 loop.close()
