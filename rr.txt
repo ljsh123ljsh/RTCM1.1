@@ -1,0 +1,23 @@
+1 Reserved
+2 L1 C/A 1C
+3 L1 P 1P
+4 L1 Z-tracking or similar
+1W
+5-7 Reserved
+8 L2 C/A 2C
+9 L2 P 2P
+10 L2 Z-tracking or
+similar
+2W
+11-14 Reserved
+15 L2 L2C(M) 2S
+16 L2 L2C(L) 2L
+17 L2 L2C(M+L) 2X
+18-21 Reserved
+22 L5 I 5I
+23 L5 Q 5Q
+24 L5 I+Q 5X
+25-29 Reserved
+30 L1 L1C-D 1S
+31 L1 L1C-P 1L
+32 L1 L1C-(D+P) 1X

@@ -4,14 +4,21 @@ from base64 import b64encode
 from binascii import b2a_hex
 from random import random
 from random import choice
-from stable.Tool import map_d30
-from RTCM_ANALYSE import Analyse
-import load2redis
+from multiprocessing import Process
 '''
 模拟 + 解析
 '''
 
 async def connect_cors():
+    host = '127.0.0.1'
+    port = 8105
+    user = 'cmcc123'
+    passqord = 'cmcc_123'
+    mountpoint = 'source3'
+    fail_number = 0
+    success_number = 0
+    locaion_range = 1
+
     k = 1
     while k:
         connect = asyncio.open_connection(host, port)
@@ -24,7 +31,7 @@ async def connect_cors():
         print(line)
         k += 1
         if line == b'ICY 200 OK\r\n':
-            global success_number
+            # global success_number
             success_number += 1
             print("第{}个登录成功".format(success_number))
             while 1:
@@ -41,51 +48,38 @@ async def connect_cors():
                 GGA = str.encode(GGA)
                 # 发送GGA，方法同Socket.sendall(GGA)
                 writer.write(GGA)
+                j = 1
+                # while j<=2:
+                #     j += 1
                 await writer.drain()
                 # 接收差分数据
-                Msg = await reader.read(1400)
+                Msg = await reader.read(750*20)
                 Msg = b2a_hex(Msg).decode('utf-8')
                 # 打印差分数据，根据需要选择是否屏蔽
 
-                # 解算差分
-                gen = map_d30(Msg)
-                while 1:
-                    try:
-                        data = next(gen)
-                    except StopIteration:
-                        print("——" * 30)
-                        print('COMPLETE')
-                        print("——"*50)
-                        break
-                    try:
-                         Analyse.analyse(data)
-                    except KeyError:
-                         load2redis.main()
-                    except:
-                        continue
-                # 解算完成
+
 
                 print(Msg)
-                await asyncio.sleep(1)
-        if k > 5:
-            global fail_number
-            print('第{}个登录失败'.format(fail_number + 1))
-            fail_number += 1
-            return -1
+                await asyncio.sleep(20)
 
-
-if __name__ == '__main__':
-    host = '120.204.202.101'
-    port = 8691
-    user = 'cmcc123'
-    passqord = 'cmcc_123'
-    mountpoint = 'source3'
-    fail_number = 0
-    success_number = 0
-    locaion_range = 1  # 模拟范围
-    simulator_number = 1  # 模拟数量
-
+def lop(x):
     #定义事件循环
+    simulator_number = 1  # 妯℃嫙鏁伴噺
     task = [connect_cors() for i in range(simulator_number)]
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.wait(task))
+
+
+if __name__ == '__main__':
+
+    proce_li = []
+    for i in range(1):
+        p = Process(target=lop, args=(1,))
+        proce_li.append(p)
+    for p in proce_li:
+        p.start()
+
+
+    
+
+

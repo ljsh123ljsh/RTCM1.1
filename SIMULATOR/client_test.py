@@ -4,12 +4,7 @@ from base64 import b64encode
 from binascii import b2a_hex
 from random import random
 from random import choice
-from stable.Tool import map_d30
-from RTCM_ANALYSE import Analyse
-import load2redis
-'''
-模拟 + 解析
-'''
+
 
 async def connect_cors():
     k = 1
@@ -33,7 +28,6 @@ async def connect_cors():
                 a = int(a)-80000
                 if a < 0:
                     a = a+120000
-                # 随机位置
                 B = round(3114.67923534 + random()*locaion_range*choice([1, -1]), 7)
                 L = round(12135.54812367 + random()*locaion_range*choice([1, -1]), 7)
                 GGA = '$GPGGA,' + str(a) + ','+str(B)+',N,'+str(L)+',E,1,24,0.6,43.580,M,-6.251,M,,*47'
@@ -42,28 +36,9 @@ async def connect_cors():
                 # 发送GGA，方法同Socket.sendall(GGA)
                 writer.write(GGA)
                 await writer.drain()
-                # 接收差分数据
-                Msg = await reader.read(1400)
+                # 接收差分数据，方法同Socket.recv(1024)
+                Msg = await reader.read(5000)
                 Msg = b2a_hex(Msg).decode('utf-8')
-                # 打印差分数据，根据需要选择是否屏蔽
-
-                # 解算差分
-                gen = map_d30(Msg)
-                while 1:
-                    try:
-                        data = next(gen)
-                    except StopIteration:
-                        print("——" * 30)
-                        print('COMPLETE')
-                        print("——"*50)
-                        break
-                    try:
-                         Analyse.analyse(data)
-                    except KeyError:
-                         load2redis.main()
-                    except:
-                        continue
-                # 解算完成
 
                 print(Msg)
                 await asyncio.sleep(1)
@@ -72,6 +47,7 @@ async def connect_cors():
             print('第{}个登录失败'.format(fail_number + 1))
             fail_number += 1
             return -1
+
 
 
 if __name__ == '__main__':

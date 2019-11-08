@@ -5,9 +5,19 @@ from pandas import concat
 from stable.CellContent import CellContent
 from stable.ConvertDecimal import ConvertDecimal as cd
 from stable.ClientReceiver import ClientReceiver as cr
+from redis import StrictRedis
+from json import loads
+r = StrictRedis(host='49.233.166.39', port=6379, db=10, decode_responses=True)
+
+
 
 class RTCM:
-    def MSM4(self, data):
+
+    def MSM4(self, data, rtcmtype):
+        rtcm1074 = r.hgetall('rtcm1074')
+        rtcm1084 = r.hgetall('rtcm1084')
+        rtcm1094 = r.hgetall('rtcm1094')
+        rtcm1124 = r.hgetall('rtcm1124')
         # 12bits参考站ID； 30bitsGNSS历元； 1bit多点文标志； 7bits保留位； 2bits时钟校准标志； 2bits拓展时钟标志； 1bitGNSS平滑类型标志； 3bitsGNSS平滑区间  共61bits省略
         ID = data[12:24]
         print("参考站ID = {}".format(cd(ID).convertdecimal()))
@@ -23,12 +33,21 @@ class RTCM:
         Nsig = sig.map_amount()  # 信号数
         # print(Nsig)
         Nsig_id = sig.map_id()
+        print(Nsig_id)
+        DIC = eval('rtcm'+rtcmtype)
+        Nsig_id = [loads(DIC[str(x)])['FrequencyBand'] for x in Nsig_id]
+
+        '''
+        加入信号类型
+        '''
+        print("信号类型：{}".format(Nsig_id))
+
         X = Nsat * Nsig
         gnss_x = data[169:169 + X]  # 单元掩码X bits
         Ncell = Map('1', gnss_x).map_amount()  # 单元掩码数
         # print(Ncell)
         print("卫星数：{}; 信号数：{}; 单元数：{}".format(Nsat, Nsig, Ncell))
-        # print((169+Nsat*Nsig+18*Nsat+48*Ncell)/8)
+
 
         # -----------卫星数据data2------------
         data2 = data[169 + X:]
@@ -50,36 +69,18 @@ class RTCM:
             p_ll = p.ConvertContent(gnss_x)  # 列表与单元掩码融合后
             # print(p_ll)
             if i == 1:  # 精确伪距处理
-                # print(p)
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
+
+            elif i == 2:
+                p_ll = p.ConvertDecimal(least=24, symbol=True)
+                print('载波相位：{}'.format(p_ll))
             elif i == 5:  # 信噪比处理
                 p_ll = p.ConvertDecimal()
             dic[i] = p_ll
             datan = p.RestContent()
             i += 1
 
-        i = 0
-        while i < len(gnss):
-            dic[1][i] = (gnss[i] + dic[1][i]) * 299792458 / 1000
-            i += 1
 
-        df_li = []
-        for k in range(len(dic.keys())):
-            k += 1
-            no_k_list = [2, 3, 4]  # 2,3,4暂时不处理
-            if k in no_k_list:
-                continue
-            df_sat_sig = DF(index=Nsig_id, columns=Nsat_id)
-
-            for id_c in Nsat_id:
-                i = Nsat_id.index(id_c)
-                for id_i in Nsig_id:
-                    j = Nsig_id.index(id_i)
-                    df_sat_sig.loc[id_i, id_c] = str(dic[k][i * Nsig + j])
-            df_li.append(df_sat_sig)
-            # print(df_sat_sig)
-        res = concat(df_li, axis=0, ignore_index=False)
-        print(DF(res.T))
 
     def rtcm1005(self, data):
         ID = data[12:24]
@@ -100,11 +101,19 @@ class RTCM:
         print("天线标识符 = {}".format(n.Getcontent()))
         rdata = n.Restcontent()
         print("天线设置序列 = {}".format(int(rdata[0:8]+'0')))
+
+    def rtcm1008(self, data):
+        ID = data[12:24]
+        print("参考站ID = {}".format(cd(ID).convertdecimal()))
+        n = cr(data[24:32])
+        print("天线标识符 = {}".format(n.Getcontent()))
+        rdata = n.Restcontent()
+        print("天线设置序列 = {}".format(int(rdata[0:8] + '0')))
         # rtcm1008
-        # m = int(data[40+8 * n:48+8 * n])
-        # char2_b = data[48+8 * n:48+8 * n + 8 * m]
-        # char2 = Tool.bin2ascii(char2_b)
-        # print("天线序列号 = {}".format(char2))
+        m = int(data[40+8 * n:48+8 * n])
+        char2_b = data[48+8 * n:48+8 * n + 8 * m]
+        char2 = Tool.bin2ascii(char2_b)
+        print("天线序列号 = {}".format(char2))
 
     def rtcm1033(self, data):
         ID = data[12:24]

@@ -23,5 +23,8 @@ class ConvertDecimal:
                 num_bin = '0' + self.strbin[1:]
                 num = int(str(num_bin), base=2) * 2 ** (0 - self.least)
         else:  # 第一位不代表符号
-            num = int(self.strbin, base=2) * 2 ** (0 - self.least)
+            try:
+                num = int(self.strbin, base=2) * 2 ** (0 - self.least)
+            except ValueError:
+                num = 0
         return num

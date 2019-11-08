@@ -2,6 +2,8 @@ from stable.ConvertDecimal import ConvertDecimal as cd
 import math
 from stable.Map import Map
 from binascii import a2b_hex as ab
+
+
 def supplehead(s):
     '''
     :param s: 输入16进制第一位eg：3，4

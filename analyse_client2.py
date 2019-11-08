@@ -4,14 +4,19 @@ from base64 import b64encode
 from binascii import b2a_hex
 from random import random
 from random import choice
-import main_test
+from stable.Tool import map_d30
+from RTCM_ANALYSE import Analyse
+from configparser import ConfigParser
+'''
+模拟 + 解析
+'''
 
 async def connect_cors():
     k = 1
     while k:
         connect = asyncio.open_connection(host, port)
         reader, writer = await connect
-        EncryptionStr = b64encode(str.encode(user + ':' + passqord))
+        EncryptionStr = b64encode(str.encode(user + ':' + password))
         header = 'GET /' + mountpoint + ' HTTP/1.1\r\nUser-Agent: NTRIP ZHDGPS\r\nAccept: */*\r\nConnection: close\r\nAuthorization: Basic ' + bytes.decode(EncryptionStr) + '\r\n\r\n'
         writer.write(header.encode())
         await writer.drain()
@@ -28,6 +33,7 @@ async def connect_cors():
                 a = int(a)-80000
                 if a < 0:
                     a = a+120000
+                # 随机位置
                 B = round(3114.67923534 + random()*locaion_range*choice([1, -1]), 7)
                 L = round(12135.54812367 + random()*locaion_range*choice([1, -1]), 7)
                 GGA = '$GPGGA,' + str(a) + ','+str(B)+',N,'+str(L)+',E,1,24,0.6,43.580,M,-6.251,M,,*47'
@@ -36,11 +42,23 @@ async def connect_cors():
                 # 发送GGA，方法同Socket.sendall(GGA)
                 writer.write(GGA)
                 await writer.drain()
-                # 接收差分数据，方法同Socket.recv(1024)
+                # 接收差分数据
                 Msg = await reader.read(5000)
                 Msg = b2a_hex(Msg).decode('utf-8')
                 # 打印差分数据，根据需要选择是否屏蔽
-                main_test.map_d30(Msg)
+                if ana:  # 是否解算标志
+                    # 解算差分
+                    gen = map_d30(Msg)
+                    while 1:
+                        try:
+                            data = next(gen)
+                        except StopIteration:
+                            print("——" * 30)
+                            print('COMPLETE')
+                            print("——"*50)
+                            break
+                        Analyse.analyse(data)
+                    # 解算完成
 
                 print(Msg)
                 await asyncio.sleep(1)
@@ -51,18 +69,24 @@ async def connect_cors():
             return -1
 
 
-
 if __name__ == '__main__':
-    host = '120.204.202.101'
-    port = 8691
-    user = 'cmcc123'
-    passqord = 'cmcc_123'
-    mountpoint = 'source3'
+    cf = ConfigParser()
+
+    cf.read('conf.ini', encoding='ANSI')
+
+    host = cf.get('ntripcaster', 'IP')
+    print(host)
+    port = int(cf.get('ntripcaster', 'port'))
+    user = cf.get('ntripcaster', 'user')
+    password = cf.get('ntripcaster', 'password')
+    mountpoint = cf.get('ntripcaster', 'mountpoint')
+    locaion_range = float(cf.get('client', 'range'))
+    simulator_number = int(cf.get('client', 'clientnumber'))
+    ana = int(cf.get('analysis', 'degree'))
+
+    #记录成功失败数
     fail_number = 0
     success_number = 0
-    locaion_range = 1  # 模拟范围
-    simulator_number = 1  # 模拟数量
-
     #定义事件循环
     task = [connect_cors() for i in range(simulator_number)]
     loop = asyncio.get_event_loop()

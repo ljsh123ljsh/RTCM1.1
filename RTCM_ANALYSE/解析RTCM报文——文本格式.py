@@ -1,12 +1,12 @@
 from stable import Tool
 from stable.Map import Map
-from RTCM import RTCM
+from RTCM_ANALYSE.RTCM import RTCM
 '''
 解析文本报文
 '''
 if __name__ == '__main__':
 
-    file = open('g1.txt', 'r', encoding='utf-8')
+    file = open('FILE\g1.txt', 'r', encoding='utf-8')
     content = file.read()
     content = content.replace('\n', '').replace(' ', '')
     header = 'D30'

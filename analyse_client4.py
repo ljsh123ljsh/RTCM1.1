@@ -6,12 +6,20 @@ from random import random
 from random import choice
 from stable.Tool import map_d30
 from RTCM_ANALYSE import Analyse
-import load2redis
 '''
 模拟 + 解析
 '''
+from redis import StrictRedis as red
+from redis import ConnectionPool as cp
 
-async def connect_cors():
+
+async def inp(content, i):
+    r = red(connection_pool=pool)
+    r.lpush(str(i), content)
+    r.close()
+
+
+async def connect_cors(x):
     k = 1
     while k:
         connect = asyncio.open_connection(host, port)
@@ -47,23 +55,7 @@ async def connect_cors():
                 Msg = b2a_hex(Msg).decode('utf-8')
                 # 打印差分数据，根据需要选择是否屏蔽
 
-                # 解算差分
-                gen = map_d30(Msg)
-                while 1:
-                    try:
-                        data = next(gen)
-                    except StopIteration:
-                        print("——" * 30)
-                        print('COMPLETE')
-                        print("——"*50)
-                        break
-                    try:
-                         Analyse.analyse(data)
-                    except KeyError:
-                         load2redis.main()
-                    except:
-                        continue
-                # 解算完成
+                await inp(content=Msg, i=x)
 
                 print(Msg)
                 await asyncio.sleep(1)
@@ -75,8 +67,9 @@ async def connect_cors():
 
 
 if __name__ == '__main__':
-    host = '120.204.202.101'
-    port = 8691
+    pool = cp(host='49.233.166.39', port=6379, db=12)
+    host = '117.135.142.213'
+    port = 8105
     user = 'cmcc123'
     passqord = 'cmcc_123'
     mountpoint = 'source3'
@@ -86,6 +79,6 @@ if __name__ == '__main__':
     simulator_number = 1  # 模拟数量
 
     #定义事件循环
-    task = [connect_cors() for i in range(simulator_number)]
+    task = [connect_cors(i) for i in range(simulator_number)]
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.wait(task))

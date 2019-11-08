@@ -41,4 +41,4 @@ def find_all(sub, s):   # 匹配字符串位置
     if len(index_list) > 0:
         return index_list
     else:
-        return -1
+        return [-1 ]
