@@ -61,6 +61,7 @@ async def connect_cors():
                          Analyse.analyse(data)
                     except KeyError:
                          load2redis.main()
+
                     except:
                         continue
                 # 解算完成
