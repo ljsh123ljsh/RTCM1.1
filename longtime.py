@@ -1,29 +1,29 @@
-import asyncio
 import time
+import asyncio
 from base64 import b64encode
 from binascii import b2a_hex
 from random import random
 from random import choice
 from stable.Tool import map_d30
 from RTCM_ANALYSE import Analyse
+import socket
 import load2redis
 '''
 模拟 + 解析
 '''
 
-async def connect_cors():
+def connect_cors():
     k = 1
     while k:
-        connect = asyncio.open_connection(host, port)
-        reader, writer = await connect
+        conn = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+        conn.connect((host, port))
         EncryptionStr = b64encode(str.encode(user + ':' + passqord))
         header = 'GET /' + mountpoint + ' HTTP/1.1\r\nUser-Agent: NTRIP ZHDGPS\r\nAccept: */*\r\nConnection: close\r\nAuthorization: Basic ' + bytes.decode(EncryptionStr) + '\r\n\r\n'
-        writer.write(header.encode())
-        await writer.drain()
-        line = await reader.readline()
+        conn.sendall(header.encode())
+        line = conn.recv(4096)
         print(line)
         k += 1
-        if line == b'ICY 200 OK\r\n':
+        if line == b'ICY 200 OK\r\n\r\n':
             global success_number
             success_number += 1
             print("第{}个登录成功".format(success_number))
@@ -40,10 +40,9 @@ async def connect_cors():
                 print(GGA)
                 GGA = str.encode(GGA)
                 # 发送GGA，方法同Socket.sendall(GGA)
-                writer.write(GGA)
-                await writer.drain()
+                conn.sendall(GGA)
                 # 接收差分数据
-                Msg = await reader.read(1400)
+                Msg = conn.recv(1500)
                 Msg = b2a_hex(Msg).decode('utf-8')
                 # 打印差分数据，根据需要选择是否屏蔽
 
@@ -67,7 +66,7 @@ async def connect_cors():
                 # 解算完成
 
                 print(Msg)
-                await asyncio.sleep(1)
+                time.sleep(1)
         if k > 5:
             global fail_number
             print('第{}个登录失败'.format(fail_number + 1))
@@ -85,8 +84,4 @@ if __name__ == '__main__':
     success_number = 0
     locaion_range = 1  # 模拟范围
     simulator_number = 1  # 模拟数量
-
-    #定义事件循环
-    task = [connect_cors() for i in range(simulator_number)]
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(asyncio.wait(task))
+    connect_cors()

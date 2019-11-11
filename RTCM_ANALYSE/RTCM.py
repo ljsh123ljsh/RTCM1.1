@@ -73,7 +73,7 @@ class RTCM:
                 # print(p)
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
             elif i == 2:
-                pass
+                p_ll = p.ConvertDecimal(least=24, symbol=True)
             elif i == 5:  # 信噪比处理
                 p_ll = p.ConvertDecimal()
             dic[i] = p_ll
