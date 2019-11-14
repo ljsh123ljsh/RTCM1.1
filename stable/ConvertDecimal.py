@@ -16,7 +16,11 @@ class ConvertDecimal:
         '''
         if self.symbol == True:  # 第一位为符号位
             if self.strbin[0] == '1':  # 1代表负数，补码转换
-                num_bin = bin(int(self.strbin[1:], base=2) - 1)[2:]
+                adaptor = bin(int(self.strbin[1:], base=2) - 1)
+                if adaptor[0] == '-':  # 解决传输数据为“10000000000”形式
+                    num_bin = adaptor[3:]
+                else:
+                    num_bin = adaptor[2:]
                 num_bin = num_bin.replace('0', '2').replace('1', '0').replace('2', '1')
                 num = 0 - int(num_bin, base=2) * 2 ** (0 - self.least)
             else:  # 0代表正数，不做变换

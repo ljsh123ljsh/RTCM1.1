@@ -49,6 +49,7 @@ async def connect_cors():
 
                 # 解算差分
                 gen = map_d30(Msg)
+                print(Msg)
                 while 1:
                     try:
                         data = next(gen)
@@ -61,12 +62,10 @@ async def connect_cors():
                          Analyse.analyse(data)
                     except KeyError:
                          load2redis.main()
-
                     except:
                         continue
                 # 解算完成
 
-                print(Msg)
                 await asyncio.sleep(1)
         if k > 5:
             global fail_number
@@ -76,17 +75,17 @@ async def connect_cors():
 
 
 if __name__ == '__main__':
-    host = '192.168.130.54'
+    host = '192.168.130.30'
     port = 8201
     user = 'cmcc123'
     passqord = 'cmcc_123'
-    mountpoint = 'source6'
+    mountpoint = 'source7'
     fail_number = 0
     success_number = 0
     locaion_range = 1  # 模拟范围
     simulator_number = 1  # 模拟数量
 
-    #定义事件循环
+
     task = [connect_cors() for i in range(simulator_number)]
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.wait(task))

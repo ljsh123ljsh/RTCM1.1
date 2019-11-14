@@ -68,9 +68,7 @@ class RTCM:
             p = CellContent(Ncell, i)
             p.ReturnContent(datan)  # 1精确伪距,2相位距离,3相位距离锁定时间标志,4半周模糊度标志,5信噪比CNR
             p_ll = p.ConvertContent(gnss_x)  # 列表与单元掩码融合后
-            # print(p_ll)
             if i == 1:  # 精确伪距处理
-                # print(p)
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
             elif i == 2:
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
