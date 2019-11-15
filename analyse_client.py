@@ -6,7 +6,8 @@ from random import random
 from random import choice
 from stable.Tool import map_d30
 from RTCM_ANALYSE import Analyse
-import load2redis
+from stable import load2redis
+
 '''
 模拟 + 解析
 '''
@@ -79,7 +80,7 @@ if __name__ == '__main__':
     port = 8201
     user = 'cmcc123'
     passqord = 'cmcc_123'
-    mountpoint = 'source7'
+    mountpoint = 'source3'
     fail_number = 0
     success_number = 0
     locaion_range = 1  # 模拟范围

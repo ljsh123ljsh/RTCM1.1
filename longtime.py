@@ -1,5 +1,4 @@
 import time
-import asyncio
 from base64 import b64encode
 from binascii import b2a_hex
 from random import random
@@ -7,7 +6,8 @@ from random import choice
 from stable.Tool import map_d30
 from RTCM_ANALYSE import Analyse
 import socket
-import load2redis
+from stable import load2redis
+
 '''
 模拟 + 解析
 '''

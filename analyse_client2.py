@@ -7,6 +7,8 @@ from random import choice
 from stable.Tool import map_d30
 from RTCM_ANALYSE import Analyse
 from configparser import ConfigParser
+from stable import load2redis
+
 '''
 模拟 + 解析
 '''
@@ -43,12 +45,13 @@ async def connect_cors():
                 writer.write(GGA)
                 await writer.drain()
                 # 接收差分数据
-                Msg = await reader.read(5000)
+                Msg = await reader.read(1400)
                 Msg = b2a_hex(Msg).decode('utf-8')
                 # 打印差分数据，根据需要选择是否屏蔽
-                if ana:  # 是否解算标志
+                if ana:
                     # 解算差分
                     gen = map_d30(Msg)
+                    print(Msg)
                     while 1:
                         try:
                             data = next(gen)
@@ -57,10 +60,14 @@ async def connect_cors():
                             print('COMPLETE')
                             print("——"*50)
                             break
-                        Analyse.analyse(data)
+                        try:
+                             Analyse.analyse(data)
+                        except KeyError:
+                             load2redis.main()
+                        except:
+                            continue
                     # 解算完成
 
-                print(Msg)
                 await asyncio.sleep(1)
         if k > 5:
             global fail_number
@@ -73,7 +80,6 @@ if __name__ == '__main__':
     cf = ConfigParser()
 
     cf.read('conf.ini', encoding='ANSI')
-
     host = cf.get('ntripcaster', 'IP')
     print(host)
     port = int(cf.get('ntripcaster', 'port'))
