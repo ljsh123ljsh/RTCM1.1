@@ -76,11 +76,11 @@ async def connect_cors():
 
 
 if __name__ == '__main__':
-    host = '192.168.130.30'
-    port = 8201
-    user = 'cmcc123'
-    passqord = 'cmcc_123'
-    mountpoint = 'source3'
+    host = '117.135.142.213'
+    port = 8105
+    user = 'cmcc124'
+    passqord = 'cmcc_124'
+    mountpoint = 'RTCM23_GR'
     fail_number = 0
     success_number = 0
     locaion_range = 1  # 模拟范围
