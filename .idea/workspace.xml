@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eef20841-e9b6-4b3e-9e6c-a5c1a557bb08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyse_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyse_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/longtime.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +209,7 @@
       <workItem from="1574923109539" duration="4127000" />
       <workItem from="1575252925228" duration="2515000" />
       <workItem from="1575422943766" duration="7643000" />
-      <workItem from="1575599176927" duration="7790000" />
+      <workItem from="1575599176927" duration="8197000" />
     </task>
     <task id="LOCAL-00001" summary="55">
       <created>1572330178554</created>
@@ -293,7 +288,14 @@
       <option name="project" value="LOCAL" />
       <updated>1574303871077</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="1206">
+      <created>1575620644013</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1575620644013</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,7 +341,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="55" />
     <MESSAGE value="shuqian" />
-    <option name="LAST_COMMIT_MESSAGE" value="shuqian" />
+    <MESSAGE value="1206" />
+    <option name="LAST_COMMIT_MESSAGE" value="1206" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RTCM1_1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1574930919037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
@@ -347,6 +350,6 @@
     <SUITE FILE_PATH="coverage/RTCM1_1$client.coverage" NAME="client Coverage Results" MODIFIED="1575444364258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1_1$client2.coverage" NAME="client2 Coverage Results" MODIFIED="1575620403468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1_1$locu.coverage" NAME="locu Coverage Results" MODIFIED="1575599605792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$cli.coverage" NAME="cli Coverage Results" MODIFIED="1575620507774" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$cli.coverage" NAME="cli Coverage Results" MODIFIED="1575621059301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
