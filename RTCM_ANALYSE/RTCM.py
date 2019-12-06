@@ -72,6 +72,7 @@ class RTCM:
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
             elif i == 2:
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
+                print(p_ll)
             elif i == 5:  # 信噪比处理
                 p_ll = p.ConvertDecimal()
             dic[i] = p_ll
@@ -99,7 +100,6 @@ class RTCM:
             df_li.append(df_sat_sig)
             # print(df_sat_sig)
         res = concat(df_li, axis=0, ignore_index=False)
-
         print(DF(res.T))
 
     def rtcm1005(self, data):
