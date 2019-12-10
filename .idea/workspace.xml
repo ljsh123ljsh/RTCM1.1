@@ -2,25 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eef20841-e9b6-4b3e-9e6c-a5c1a557bb08" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DATABASE/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/cli2.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FILE/g1.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FILE/g2.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FILE/g3.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FILE/ggg.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM_easy.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM_easy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/解析RTCM报文——文本格式.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/解析RTCM报文——生成器.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyse_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyse_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyse_client2.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyse_client3.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/analyse_client4.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/load2redis.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/load2redis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ggg.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rr.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -230,7 +214,7 @@
       <workItem from="1575599176927" duration="11047000" />
       <workItem from="1575879089265" duration="3258000" />
       <workItem from="1575941006991" duration="957000" />
-      <workItem from="1575943537897" duration="2659000" />
+      <workItem from="1575943537897" duration="2908000" />
     </task>
     <task id="LOCAL-00001" summary="55">
       <created>1572330178554</created>
@@ -323,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575621092778</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="1206">
+      <created>1575966114997</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1575966114997</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
