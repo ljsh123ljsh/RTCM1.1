@@ -5,7 +5,7 @@ from binascii import b2a_hex
 from random import random
 from random import choice
 from configparser import ConfigParser
-import DATABASE as db
+import pika
 
 
 def genGGA(hhddss):
@@ -22,9 +22,7 @@ def genGGA(hhddss):
 async def rabbit(Msg):
     channel.basic_publish(exchange=ex, routing_key='cc', body=Msg)
 
-
-
-async def connect_cors():
+async def login():
     connect = asyncio.open_connection(host, port)
     reader, writer = await connect
     EncryptionStr = b64encode(str.encode(user + ':' + password))
@@ -35,30 +33,37 @@ async def connect_cors():
     line = await reader.readline()
     # print(line)
     if line == b'ICY 200 OK\r\n':
-        # print(line)
-        hhddss = time.strftime('%H%M%S', time.localtime(time.time()))
-        hhddss = int(hhddss) - 80000
-        if hhddss < 0:
-            hhddss = hhddss + 120000
-        GGA, No = next(genGGA(hhddss))
-        # 获取不同时间段的GGA，并转换为字节流
-        GGA = str.encode(GGA)
-        i = 1
-        while i:
-            # 发送GGA，方法同Socket.sendall(GGA)
-            print(GGA)
-            i += 1
+        return reader, writer
 
-            writer.write(GGA)
-            await writer.drain()
-            Msg = await reader.read(1500)
-            Msg = b2a_hex(Msg).decode('utf-8')
-            print(Msg)
-            # 打印差分数据，根据需要选择是否屏蔽
-            await rabbit(Msg)
-            await asyncio.sleep(1)
-    else :
-        print(line)
+
+async def sendgga(reader, writer):
+    hhddss = time.strftime('%H%M%S', time.localtime(time.time()))
+    hhddss = int(hhddss) - 80000
+    if hhddss < 0:
+        hhddss = hhddss + 120000
+    GGA, No = next(genGGA(hhddss))
+    # 获取不同时间段的GGA，并转换为字节流
+    GGA = str.encode(GGA)
+    i = 1
+    while i:
+        # 发送GGA，方法同Socket.sendall(GGA)
+        print('---' + str(i))
+        i += 1
+        if writer.is_closing():
+            await login()
+        writer.write(GGA)
+        await writer.drain()
+        Msg = await reader.read(1500)
+        Msg = b2a_hex(Msg).decode('utf-8')
+        # 打印差分数据，根据需要选择是否屏蔽
+        await rabbit(Msg)
+        await asyncio.sleep(1)
+
+async def loop():
+    task = [login() for i in range(50)]
+    loop = asyncio.get_event_loop()
+    loop.run_until_complete(asyncio.wait(task))
+    await asyncio.wait(simulator_number/50)
 
 
 if __name__ == '__main__':
@@ -73,12 +78,14 @@ if __name__ == '__main__':
     mountpoint = cf.get('ntripcaster', 'mountpoint')
     locaion_range = float(cf.get('client', 'range'))
     simulator_number = int(cf.get('client', 'clientnumber'))
-
-    channel = db.RABBITMQ
+    credentials = pika.PlainCredentials(cf.get('rabbitmq', 'user'), cf.get('rabbitmq', 'password'))
+    connection = pika.BlockingConnection(
+        pika.ConnectionParameters(host=cf.get('rabbitmq', 'host'), port=int(cf.get('rabbitmq', 'port')),
+                                  credentials=credentials))
+    channel = connection.channel()
     ex = cf.get('rabbitmq', 'exchange')
     channel.exchange_declare(exchange=ex, exchange_type='fanout')
     frequency = int(cf.get('client', 'frequency'))
+    totaltime = int(cf.get('client', 'totaltime'))
 
-    task = [connect_cors() for i in range(simulator_number)]
-    loop = asyncio.get_event_loop()
-    loop.run_until_complete(asyncio.wait(task))
+

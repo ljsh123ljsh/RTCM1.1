@@ -2,7 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eef20841-e9b6-4b3e-9e6c-a5c1a557bb08" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DATABASE/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cli2.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FILE/g1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FILE/g2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FILE/g3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FILE/ggg.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM_easy.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM_easy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/解析RTCM报文——文本格式.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/解析RTCM报文——生成器.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyse_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyse_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyse_client2.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyse_client3.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/analyse_client4.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/cli.py" beforeDir="false" afterPath="$PROJECT_DIR$/cli.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/stable/load2redis.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/load2redis.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,6 +90,28 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.cli">
+    <configuration name="RTCM" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RTCM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/RTCM_ANALYSE" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="analyse_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RTCM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,28 +156,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RTCM" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="client2" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RTCM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -160,7 +178,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="locu" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="load2redis" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RTCM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -168,12 +186,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/venv" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/stable" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="C:\Users\lvjia\PycharmProjects\RTCM1.1\locu.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/stable/load2redis.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -185,10 +203,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.cli" />
-        <item itemvalue="Python.client2" />
-        <item itemvalue="Python.locu" />
-        <item itemvalue="Python.client" />
+        <item itemvalue="Python.load2redis" />
         <item itemvalue="Python.analyse_client" />
+        <item itemvalue="Python.RTCM" />
+        <item itemvalue="Python.client2" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +227,10 @@
       <workItem from="1574923109539" duration="4127000" />
       <workItem from="1575252925228" duration="2515000" />
       <workItem from="1575422943766" duration="7643000" />
-      <workItem from="1575599176927" duration="8197000" />
+      <workItem from="1575599176927" duration="11047000" />
+      <workItem from="1575879089265" duration="3258000" />
+      <workItem from="1575941006991" duration="957000" />
+      <workItem from="1575943537897" duration="2659000" />
     </task>
     <task id="LOCAL-00001" summary="55">
       <created>1572330178554</created>
@@ -295,7 +316,14 @@
       <option name="project" value="LOCAL" />
       <updated>1575620644013</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="1206">
+      <created>1575621092778</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1575621092778</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,11 +373,13 @@
     <option name="LAST_COMMIT_MESSAGE" value="1206" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RTCM1_1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1574930919037" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1575964455583" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1_1$ggg.coverage" NAME="ggg Coverage Results" MODIFIED="1574066047238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1_1$client.coverage" NAME="client Coverage Results" MODIFIED="1575444364258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$RTCM.coverage" NAME="RTCM Coverage Results" MODIFIED="1575964450803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RTCM_ANALYSE" />
     <SUITE FILE_PATH="coverage/RTCM1_1$client2.coverage" NAME="client2 Coverage Results" MODIFIED="1575620403468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$load2redis.coverage" NAME="load2redis Coverage Results" MODIFIED="1575965134253" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stable" />
     <SUITE FILE_PATH="coverage/RTCM1_1$locu.coverage" NAME="locu Coverage Results" MODIFIED="1575599605792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$cli.coverage" NAME="cli Coverage Results" MODIFIED="1575621059301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$cli.coverage" NAME="cli Coverage Results" MODIFIED="1575965750848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

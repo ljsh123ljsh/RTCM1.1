@@ -5,9 +5,9 @@ from pandas import concat
 from stable.CellContent import CellContent
 from stable.ConvertDecimal import ConvertDecimal as cd
 from stable.ClientReceiver import ClientReceiver as cr
-from redis import StrictRedis
 from json import loads
-r = StrictRedis(host='49.233.166.39', port=6379, db=10, decode_responses=True)
+import DATABASE as db
+r = db.REDIS
 
 
 

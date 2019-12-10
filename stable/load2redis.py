@@ -1,10 +1,9 @@
-import pymysql
-import redis
 import json
+import DATABASE as db
 
 def main():
-    r = redis.StrictRedis(host='49.233.166.39', port=6379, db=10)
-    connection = pymysql.connect(host='49.233.166.39', port=3306, user='root', password='123456', db='singal')
+    r = db.REDIS
+    connection = db.MYSQL
     cursor = connection.cursor()
     cursor.execute("show tables")
 
@@ -18,7 +17,6 @@ def main():
         cols = cursor.fetchall()
         print(table)
         for result in results:
-            # print(cols[1][0])
             value = {
                 cols[1][0]: result[1],
                 cols[2][0]: result[2],
