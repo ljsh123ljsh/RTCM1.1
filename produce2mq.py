@@ -5,7 +5,7 @@ from binascii import b2a_hex
 from random import random
 from random import choice
 from configparser import ConfigParser
-import DATABASE as db
+from DB import RABBITMQ
 
 
 def genGGA(hhddss):
@@ -74,7 +74,7 @@ if __name__ == '__main__':
     locaion_range = float(cf.get('client', 'range'))
     simulator_number = int(cf.get('client', 'clientnumber'))
 
-    channel = db.RABBITMQ
+    channel = RABBITMQ.RABBITMQ
     ex = cf.get('rabbitmq', 'exchange')
     channel.exchange_declare(exchange=ex, exchange_type='fanout')
     frequency = int(cf.get('client', 'frequency'))

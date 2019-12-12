@@ -7,7 +7,8 @@ from stable.ConvertDecimal import ConvertDecimal as cd
 from stable.ClientReceiver import ClientReceiver as cr
 from json import loads
 import DATABASE as db
-r = db.REDIS
+from DB import REDIS
+r = REDIS.REDIS
 
 
 
@@ -33,10 +34,11 @@ class RTCM:
         Nsig = sig.map_amount()  # 信号数
         # print(Nsig)
         Nsig_id = sig.map_id()
-        print(Nsig_id)
+        # print(Nsig_id)
         DIC = eval('rtcm'+rtcmtype)
-        print(Nsig_id)
-        Nsig_id = [loads(DIC[str(x)])['FrequencyBand'] for x in Nsig_id]
+        # print(DIC)
+        # print(Nsig_id)
+        Nsig_id = [loads(DIC[str.encode(str(x))])['FrequencyBand'] for x in Nsig_id]
 
         '''
         加入信号类型

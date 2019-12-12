@@ -1,9 +1,12 @@
 import json
 import DATABASE as db
+from DB import MYSQL, REDIS
 
 def main():
-    r = db.REDIS
-    connection = db.MYSQL
+    # r = db.REDIS
+    r = REDIS.REDIS
+    connection = MYSQL.MYSQL
+    # print(type(connection))
     cursor = connection.cursor()
     cursor.execute("show tables")
 
@@ -25,3 +28,5 @@ def main():
             }
             value = json.dumps(value)
             r.hset(table, result[0], value)
+if __name__ == '__main__':
+    main()

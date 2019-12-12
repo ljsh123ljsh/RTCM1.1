@@ -59,13 +59,13 @@ async def connect_cors():
                         print('COMPLETE')
                         print("——"*50)
                         break
-                    Analyse.analyse(data)
-                    # try:
-                    #      Analyse.analyse(data)
-                    # except KeyError:
-                    #      load2redis.main()
-                    # except:
-                    #     continue
+                    # Analyse.analyse(data)
+                    try:
+                         Analyse.analyse(data)
+                    except KeyError:
+                         load2redis.main()
+                    except:
+                        continue
                 # 解算完成
 
                 await asyncio.sleep(1)
