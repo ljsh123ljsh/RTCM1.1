@@ -2,9 +2,9 @@ from configparser import ConfigParser
 
 cf = ConfigParser()
 try:
-    cf.read('C:/Users/lvjia/PycharmProjects/RTCM1.1/conf.ini', encoding='ANSI')
+    cf.read(r'C:\Users\Administrator\PycharmProjects\RTCM1\conf.ini', encoding='ANSI')
 except:
-    cf.read('../conf.ini')
+    cf.read(r'C:\Users\Administrator\PycharmProjects\RTCM1\conf.ini')
 
 rabbitmq = {
     'host': cf.get('rabbitmq', 'host'),

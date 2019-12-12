@@ -77,7 +77,7 @@ async def connect_cors():
 
 
 if __name__ == '__main__':
-    host = '192.168.130.117'
+    host = '192.168.30.16'
     port = 8105
     user = 'cmcc123'
     passqord = 'cmcc_123'

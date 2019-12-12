@@ -112,3 +112,9 @@ def map_d30(content):
         yield data
         content = content[index[1] + 3 + length*2:]
 
+def segment_d30(content):
+    gen = map_d30(content)
+    lis = [next(gen) for i in range(6)]
+    print(lis)
+    return lis
+

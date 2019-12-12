@@ -19,8 +19,9 @@ def genGGA(hhddss):
         yield GGA, i
 
 
-async def rabbit(Msg):
-    channel.basic_publish(exchange=ex, routing_key='cc', body=Msg)
+async def rabbit(message):
+    channel.basic_publish(exchange=ex, routing_key=routing_key, body=message)
+    # channel.basic_publish(exchange=ex, routing_key='cc', body=Msg)
 
 
 
@@ -76,7 +77,9 @@ if __name__ == '__main__':
 
     channel = RABBITMQ.RABBITMQ
     ex = cf.get('rabbitmq', 'exchange')
-    channel.exchange_declare(exchange=ex, exchange_type='fanout')
+    channel.exchange_declare(exchange=ex, exchange_type='topic')
+    routing_key = 'data.msm'
+
     frequency = int(cf.get('client', 'frequency'))
 
     task = [connect_cors() for i in range(simulator_number)]

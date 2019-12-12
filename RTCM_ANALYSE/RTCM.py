@@ -6,7 +6,6 @@ from stable.CellContent import CellContent
 from stable.ConvertDecimal import ConvertDecimal as cd
 from stable.ClientReceiver import ClientReceiver as cr
 from json import loads
-import DATABASE as db
 from DB import REDIS
 r = REDIS.REDIS
 
