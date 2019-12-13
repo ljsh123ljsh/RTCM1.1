@@ -1,10 +1,12 @@
 from configparser import ConfigParser
-
+from os import path
+conf_path = path.join(path.abspath(path.dirname(path.dirname(__file__))), 'conf.ini')
+# print(conf_path)
 cf = ConfigParser()
 try:
-    cf.read(r'C:\Users\Administrator\PycharmProjects\RTCM1\conf.ini', encoding='ANSI')
+    cf.read(conf_path, encoding='ANSI')
 except:
-    cf.read(r'C:\Users\Administrator\PycharmProjects\RTCM1\conf.ini')
+    cf.read(conf_path)
 
 rabbitmq = {
     'host': cf.get('rabbitmq', 'host'),
