@@ -21,7 +21,6 @@ def genGGA(hhddss):
 
 async def rabbit(message):
     channel.basic_publish(exchange=ex, routing_key=routing_key, body=message)
-    # channel.basic_publish(exchange=ex, routing_key='cc', body=Msg)
 
 
 
@@ -76,7 +75,7 @@ if __name__ == '__main__':
     simulator_number = int(cf.get('client', 'clientnumber'))
 
     channel = RABBITMQ.RABBITMQ
-    ex = cf.get('rabbitmq', 'exchange')
+    ex = RABBITMQ.exchange
     channel.exchange_declare(exchange=ex, exchange_type='topic')
     routing_key = 'data.msm'
 
