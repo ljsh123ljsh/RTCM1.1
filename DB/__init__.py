@@ -13,7 +13,8 @@ rabbitmq = {
     'port': cf.get('rabbitmq', 'port'),
     'user': cf.get('rabbitmq', 'user'),
     'password': cf.get('rabbitmq', 'password'),
-    'exchange': cf.get('rabbitmq', 'exchange')
+    'exchange': cf.get('rabbitmq', 'exchange'),
+    'queue': cf.get('rabbitmq', 'queue')
 }
 
 mysql = {

@@ -114,7 +114,13 @@ def map_d30(content):
 
 def segment_d30(content):
     gen = map_d30(content)
-    lis = [next(gen) for i in range(6)]
+    lis = []
+    while 1:
+        try:
+            data = next(gen)
+            lis.append(data)
+        except StopIteration:
+            break
     print(lis)
     return lis
 
