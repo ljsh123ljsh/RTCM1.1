@@ -1,7 +1,7 @@
 from configparser import ConfigParser
 from os import path
 conf_path = path.join(path.abspath(path.dirname(path.dirname(__file__))), 'conf.ini')
-# print(conf_path)
+print(conf_path)
 cf = ConfigParser()
 try:
     cf.read(conf_path, encoding='ANSI')
