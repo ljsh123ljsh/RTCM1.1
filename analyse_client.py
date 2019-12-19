@@ -19,6 +19,7 @@ async def connect_cors():
         reader, writer = await connect
         EncryptionStr = b64encode(str.encode(user + ':' + passqord))
         header = 'GET /' + mountpoint + ' HTTP/1.1\r\nUser-Agent: NTRIP ZHDGPS\r\nAccept: */*\r\nConnection: close\r\nAuthorization: Basic ' + bytes.decode(EncryptionStr) + '\r\n\r\n'
+        print(header)
         writer.write(header.encode())
         await writer.drain()
         line = await reader.readline()
@@ -77,7 +78,7 @@ async def connect_cors():
 
 
 if __name__ == '__main__':
-    host = '192.168.30.16'
+    host = '192.168.130.117'
     port = 8105
     user = 'cmcc123'
     passqord = 'cmcc_123'

@@ -1,21 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eef20841-e9b6-4b3e-9e6c-a5c1a557bb08" name="Default Changelist" comment="1206">
-      <change afterPath="$PROJECT_DIR$/CONSUMER/BindQueue.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONSUMER/con_tes1.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CONSUMER/hhh.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myCeleryProj/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myCeleryProj/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myCeleryProj/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/myCeleryProj/tasks.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    <list default="true" id="eef20841-e9b6-4b3e-9e6c-a5c1a557bb08" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CONSUMER/con_tes.py" beforeDir="false" afterPath="$PROJECT_DIR$/CONSUMER/con_tes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/RABBITMQ.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/RABBITMQ.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DB/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/DB/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/stable/Tool.py" beforeDir="false" afterPath="$PROJECT_DIR$/stable/Tool.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,18 +47,16 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\PycharmProjects\RTCM1" />
-      <recent name="C:\Users\Administrator\PycharmProjects\RTCM1\CONSUMER" />
-      <recent name="C:\Users\lvjia\PycharmProjects\RTCM1.1" />
-      <recent name="C:\Users\10200\PycharmProjects\RTCMv1.0.0\RTCM" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Administrator\PycharmProjects\RTCM1" />
       <recent name="C:\Users\Administrator\PycharmProjects\RTCM1\CONSUMER" />
       <recent name="C:\Users\lvjia\PycharmProjects\RTCM1.1" />
       <recent name="C:\Users\lvjia\PycharmProjects\RTCM1.1\RTCM_ANALYSE" />
       <recent name="C:\Users\lvjia\PycharmProjects\RTCM1.1\stable" />
+      <recent name="C:\Users\10200\PycharmProjects\RTCMv1.0.0\RTCM\SIMULATOR" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\lvjia\PycharmProjects\RTCM1.1" />
+      <recent name="C:\Users\10200\PycharmProjects\RTCMv1.0.0\RTCM" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -86,29 +71,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.produce2mq">
-    <configuration name="BindQueue" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="RTCM" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CONSUMER" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CONSUMER/BindQueue.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python.con_tes">
     <configuration name="RABBITMQ" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RTCM" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -123,6 +86,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DB/RABBITMQ.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="RTCM" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DB" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DB/__init__.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -153,7 +138,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="con_tes1" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="consumer" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RTCM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -166,7 +151,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CONSUMER/con_tes1.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CONSUMER/consumer.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -199,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.produce2mq" />
-        <item itemvalue="Python.RABBITMQ" />
-        <item itemvalue="Python.BindQueue" />
-        <item itemvalue="Python.con_tes1" />
         <item itemvalue="Python.con_tes" />
+        <item itemvalue="Python.consumer" />
+        <item itemvalue="Python.RABBITMQ" />
+        <item itemvalue="Python.produce2mq" />
+        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
@@ -231,8 +216,9 @@
       <workItem from="1576027234476" duration="3611000" />
       <workItem from="1576113230520" duration="1736000" />
       <workItem from="1576159505552" duration="5290000" />
-      <workItem from="1576201184697" duration="6853000" />
-      <workItem from="1576241110136" duration="12274000" />
+      <workItem from="1576201184697" duration="7037000" />
+      <workItem from="1576459226707" duration="2416000" />
+      <workItem from="1576568444763" duration="2512000" />
     </task>
     <task id="LOCAL-00001" summary="55">
       <created>1572330178554</created>
@@ -353,7 +339,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576205289951</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="1206">
+      <created>1576232890883</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1576232890883</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,34 +396,28 @@
     <option name="LAST_COMMIT_MESSAGE" value="1206" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/RTCM1_1$locu.coverage" NAME="locu Coverage Results" MODIFIED="1575599605792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
-    <SUITE FILE_PATH="coverage/RTCM1$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1576163208805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$RTCM.coverage" NAME="RTCM Coverage Results" MODIFIED="1575964450803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RTCM_ANALYSE" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$con_tes.coverage" NAME="con_tes Coverage Results" MODIFIED="1576232829680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
-    <SUITE FILE_PATH="coverage/RTCM1$produce2mq.coverage" NAME="produce2mq Coverage Results" MODIFIED="1576255804384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1$BindQueue.coverage" NAME="BindQueue Coverage Results" MODIFIED="1576250771139" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
-    <SUITE FILE_PATH="coverage/RTCM1$RTCM.coverage" NAME="RTCM Coverage Results" MODIFIED="1576163101831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RTCM_ANALYSE" />
-    <SUITE FILE_PATH="coverage/RTCM1$RABBITMQ.coverage" NAME="RABBITMQ Coverage Results" MODIFIED="1576251021355" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1576114956427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1576163511679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1$MYSQL.coverage" NAME="MYSQL Coverage Results" MODIFIED="1576243156779" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$client.coverage" NAME="client Coverage Results" MODIFIED="1575444364258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1576205253716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1576245525556" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$ggg.coverage" NAME="ggg Coverage Results" MODIFIED="1574066047238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$cli.coverage" NAME="cli Coverage Results" MODIFIED="1575965750848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$client2.coverage" NAME="client2 Coverage Results" MODIFIED="1575620403468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1$con_tes.coverage" NAME="con_tes Coverage Results" MODIFIED="1576247774721" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
-    <SUITE FILE_PATH="coverage/RTCM1$REDIS.coverage" NAME="REDIS Coverage Results" MODIFIED="1576243160679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$test.coverage" NAME="test Coverage Results" MODIFIED="1576114705513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$REDIS.coverage" NAME="REDIS Coverage Results" MODIFIED="1576061293939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1$test.coverage" NAME="test Coverage Results" MODIFIED="1576245544230" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$cli2.coverage" NAME="cli2 Coverage Results" MODIFIED="1576113370570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1576231480151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$load2redis.coverage" NAME="load2redis Coverage Results" MODIFIED="1576061694828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stable" />
-    <SUITE FILE_PATH="coverage/RTCM1$con_tes1.coverage" NAME="con_tes1 Coverage Results" MODIFIED="1576247779805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
     <SUITE FILE_PATH="coverage/RTCM1_1$MYSQL.coverage" NAME="MYSQL Coverage Results" MODIFIED="1575973017828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$RABBITMQ.coverage" NAME="RABBITMQ Coverage Results" MODIFIED="1576228226807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1576114956427" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$RTCM.coverage" NAME="RTCM Coverage Results" MODIFIED="1575964450803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RTCM_ANALYSE" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$REDIS.coverage" NAME="REDIS Coverage Results" MODIFIED="1576061293939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$client2.coverage" NAME="client2 Coverage Results" MODIFIED="1575620403468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$load2redis.coverage" NAME="load2redis Coverage Results" MODIFIED="1576061694828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stable" />
     <SUITE FILE_PATH="coverage/RTCM1_1$produce2mq.coverage" NAME="produce2mq Coverage Results" MODIFIED="1576205258865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$cli.coverage" NAME="cli Coverage Results" MODIFIED="1575965750848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1$RTCM.coverage" NAME="RTCM Coverage Results" MODIFIED="1576163101831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RTCM_ANALYSE" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$cli2.coverage" NAME="cli2 Coverage Results" MODIFIED="1576113370570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1$test.coverage" NAME="test Coverage Results" MODIFIED="1576168444686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1576205253716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$RABBITMQ.coverage" NAME="RABBITMQ Coverage Results" MODIFIED="1576228226807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
+    <SUITE FILE_PATH="coverage/RTCM1$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1576168547269" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$con_tes.coverage" NAME="con_tes Coverage Results" MODIFIED="1576232829680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$ggg.coverage" NAME="ggg Coverage Results" MODIFIED="1574066047238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$client.coverage" NAME="client Coverage Results" MODIFIED="1575444364258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1$produce2mq.coverage" NAME="produce2mq Coverage Results" MODIFIED="1576167308271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$test.coverage" NAME="test Coverage Results" MODIFIED="1576114705513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$consumer.coverage" NAME="consumer Coverage Results" MODIFIED="1576231480151" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$locu.coverage" NAME="locu Coverage Results" MODIFIED="1575599605792" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/venv" />
+    <SUITE FILE_PATH="coverage/RTCM1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1576163511679" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1576163208805" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
   </component>
 </project>

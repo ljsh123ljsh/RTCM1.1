@@ -3,7 +3,7 @@ from RTCM_ANALYSE.Analyse import analyse
 from stable.Tool import segment_d30
 from threading import Thread
 
-def hh(content):
+def analyseANDprint(content):
     content_lis = segment_d30(content)
     thread_list = []
     for data in content_lis:
@@ -15,19 +15,20 @@ def hh(content):
 def callback(ch, method, properties, body):
     body = bytes.decode(body)
     ch.basic_ack(delivery_tag=method.delivery_tag)
-    print(body)
+    analyseANDprint(body)
+    # print(body)
     return body
 
 
 def consume(a, b):
     channel = RABBITMQ.RABBITMQ
     channel.exchange_declare(exchange=RABBITMQ.exchange, exchange_type='topic')
-    result = channel.queue_declare('mm', exclusive=True)
+    result = channel.queue_declare(RABBITMQ.queue, exclusive=True)
     queue_name = result.method.queue
     binding_key = 'data.msm'
     channel.basic_qos(prefetch_count=10)
 
-    channel.queue_bind(exchange=RABBITMQ.exchange, queue=queue_name, routing_key=binding_key)
+    channel.queue_bind(exchange=RABBITMQ.exchange, queue=RABBITMQ.queue, routing_key=binding_key)
     channel.basic_consume(queue_name, callback, False)
     # 不用确认消息
     print(" [*] Waiting for messages. ")
