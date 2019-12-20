@@ -1,6 +1,4 @@
-from RTCM_ANALYSE.RTCM import RTCM
-from stable.Tool import supplehead, segment_d30
-from threading import Thread
+from RTCM_ANALYSE import *
 
 '''
 解析d30

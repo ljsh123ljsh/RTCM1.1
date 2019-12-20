@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eef20841-e9b6-4b3e-9e6c-a5c1a557bb08" name="Default Changelist" comment="1206">
+    <list default="true" id="eef20841-e9b6-4b3e-9e6c-a5c1a557bb08" name="Default Changelist" comment="1220">
+      <change afterPath="$PROJECT_DIR$/RTCM_ANALYSE/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/Analyse.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/Analyse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM_easy.py" beforeDir="false" afterPath="$PROJECT_DIR$/RTCM_ANALYSE/RTCM_easy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/analyse_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/analyse_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conf.ini" beforeDir="false" afterPath="$PROJECT_DIR$/conf.ini" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/myCeleryProj/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/myCeleryProj/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/produce2mq.py" beforeDir="false" afterPath="$PROJECT_DIR$/produce2mq.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -77,7 +78,7 @@
     </option>
   </component>
   <component name="RunManager" selected="Python.analyse_client">
-    <configuration name="RABBITMQ" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="BindQueue" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RTCM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -85,12 +86,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/DB" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CONSUMER" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/DB/RABBITMQ.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CONSUMER/BindQueue.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -165,7 +166,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="consumer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="produce2mq" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RTCM" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -173,12 +174,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/CONSUMER" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/CONSUMER/consumer.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/produce2mq.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -190,10 +191,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.analyse_client" />
+        <item itemvalue="Python.produce2mq" />
+        <item itemvalue="Python.BindQueue" />
         <item itemvalue="Python.con_tes" />
         <item itemvalue="Python.REDIS" />
-        <item itemvalue="Python.consumer" />
-        <item itemvalue="Python.RABBITMQ" />
       </list>
     </recent_temporary>
   </component>
@@ -225,7 +226,7 @@
       <workItem from="1576459226707" duration="2416000" />
       <workItem from="1576568444763" duration="2512000" />
       <workItem from="1576753618350" duration="1473000" />
-      <workItem from="1576827837982" duration="3367000" />
+      <workItem from="1576827837982" duration="7886000" />
     </task>
     <task id="LOCAL-00001" summary="55">
       <created>1572330178554</created>
@@ -353,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576232890883</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="1220">
+      <created>1576832134339</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1576832134339</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -400,16 +408,18 @@
     <MESSAGE value="55" />
     <MESSAGE value="shuqian" />
     <MESSAGE value="1206" />
-    <option name="LAST_COMMIT_MESSAGE" value="1206" />
+    <MESSAGE value="1220" />
+    <option name="LAST_COMMIT_MESSAGE" value="1220" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/RTCM1_1$MYSQL.coverage" NAME="MYSQL Coverage Results" MODIFIED="1575973017828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1576832100152" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$analyse_client.coverage" NAME="analyse_client Coverage Results" MODIFIED="1576837253654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1_1$RTCM.coverage" NAME="RTCM Coverage Results" MODIFIED="1575964450803" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RTCM_ANALYSE" />
     <SUITE FILE_PATH="coverage/RTCM1_1$REDIS.coverage" NAME="REDIS Coverage Results" MODIFIED="1576828497453" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/DB" />
     <SUITE FILE_PATH="coverage/RTCM1_1$client2.coverage" NAME="client2 Coverage Results" MODIFIED="1575620403468" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1_1$load2redis.coverage" NAME="load2redis Coverage Results" MODIFIED="1576061694828" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/stable" />
-    <SUITE FILE_PATH="coverage/RTCM1_1$produce2mq.coverage" NAME="produce2mq Coverage Results" MODIFIED="1576205258865" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$BindQueue.coverage" NAME="BindQueue Coverage Results" MODIFIED="1576834268974" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/CONSUMER" />
+    <SUITE FILE_PATH="coverage/RTCM1_1$produce2mq.coverage" NAME="produce2mq Coverage Results" MODIFIED="1576837175714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1_1$cli.coverage" NAME="cli Coverage Results" MODIFIED="1575965750848" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/RTCM1$RTCM.coverage" NAME="RTCM Coverage Results" MODIFIED="1576163101831" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/RTCM_ANALYSE" />
     <SUITE FILE_PATH="coverage/RTCM1_1$cli2.coverage" NAME="cli2 Coverage Results" MODIFIED="1576113370570" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
