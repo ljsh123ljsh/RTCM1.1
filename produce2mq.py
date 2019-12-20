@@ -8,6 +8,7 @@ from configparser import ConfigParser
 from DB import RABBITMQ
 
 
+
 def genGGA(hhddss):
     B0 = 3107.67923534
     L0 = 12131.54812367
@@ -63,8 +64,10 @@ async def connect_cors():
 
 if __name__ == '__main__':
     cf = ConfigParser()
-
-    cf.read('conf.ini', encoding='ANSI')
+    try:
+        cf.read('conf.ini', encoding='ANSI')
+    except:
+        cf.read('conf.ini')
     host = cf.get('ntripcaster', 'IP')
     print(host)
     port = int(cf.get('ntripcaster', 'port'))

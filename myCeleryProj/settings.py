@@ -1,4 +1,5 @@
 from kombu import Queue
+from myCeleryProj import *
   
 # CELERY_QUEUES = (  # 定义任务队列
 #     Queue("default", routing_key="task.#"),  # 路由键以“task.”开头的消息都进default队列
@@ -30,11 +31,13 @@ CELERY_ROUTES = (
          ("myCeleryProj.tasks.task2", {"queue": "default"}),# 将taskB任务分配至队列 tasks_B
      ],
  )
- 
-BROKER_URL = "amqp://raiky:raiky@192.168.30.88:5672//"  # 使用redis 作为消息代理
+BROKER_URL = 'amqp://{}:{}@{}:{}//'.format(rabbitmq['user'], rabbitmq['password'], rabbitmq['host'], rabbitmq['port'])
+# print(BROKER_URL)
+# BROKER_URL = "amqp://raiky:raiky@192.168.30.88:5672//"  # 使用mq 作为消息代理
 # BROKER_URL = "amqp://raiky:raiky@192.168.30.88:5672//"
- 
-CELERY_RESULT_BACKEND = "redis://:123456@192.168.30.88:6379/0"  # 任务结果存在Redis
+CELERY_RESULT_BACKEND = 'redis://:{}@{}:{}/3'.format(redis['password'], redis['host'], redis['port'])
+# print(CELERY_RESULT_BACKEND)
+# CELERY_RESULT_BACKEND = "redis://:123456@192.168.30.88:6379/0"  # 任务结果存在Redis
  
 CELERY_RESULT_SERIALIZER = "json"  # 读取任务结果一般性能要求不高，所以使用了可读性更好的JSON
 CELERY_DEFAULT_QUEUE = 'test'

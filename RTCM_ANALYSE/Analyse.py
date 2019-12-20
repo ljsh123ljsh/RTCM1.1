@@ -1,9 +1,11 @@
 from RTCM_ANALYSE.RTCM import RTCM
-from stable import Tool
+from stable.Tool import supplehead, segment_d30
+from threading import Thread
 
 '''
 解析d30
 '''
+
 
 def analyse(data):
     '''
@@ -13,7 +15,7 @@ def analyse(data):
     data = data[3:]
     length = int(data[0:3], base=16)
     data = data[3:]
-    supp = Tool.supplehead(data[0])
+    supp = supplehead(data[0])
     data = supp + bin(int(data, base=16))[2:]
     rtcm_type = data[0:12]  # 差分电文类型12bis
     print( "——"*30)
@@ -29,4 +31,14 @@ def analyse(data):
         RTCM().rtcm1033(data)
     else:
         print("暂不支持")
+
+
+def analyseWholeFrame(content):
+    content_lis = segment_d30(content)
+    thread_list = []
+    for data in content_lis:
+        thr = Thread(target=analyse, args=(data, ))
+        thread_list.append(thr)
+    for l in thread_list:
+        l.start()
 
