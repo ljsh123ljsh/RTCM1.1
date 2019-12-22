@@ -2,6 +2,9 @@ from stable.ConvertDecimal import ConvertDecimal as cd
 import math
 from stable.Map import Map
 from binascii import a2b_hex as ab
+from zlib import compress
+from json import dumps
+from sys import getsizeof
 
 
 def supplehead(s):
@@ -121,6 +124,20 @@ def segment_d30(content):
             lis.append(data)
         except StopIteration:
             break
-    print(lis)
     return lis
+
+def dict2json_Compress(dictionary, ifcompress=1):
+    '''
+    :param dictionary: 输入字典类型
+    :param ifcompress: 是否压缩
+    :return: 字节流
+    '''
+    jsons = dumps(dictionary)
+    jsons_bytes = bytes(jsons, encoding='utf-8')
+    if ifcompress:
+        print(getsizeof(compress(jsons_bytes)))
+        return compress(jsons_bytes)
+    else:
+        print(getsizeof(jsons_bytes))
+        return jsons_bytes
 

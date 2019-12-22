@@ -15,7 +15,7 @@ CELERY_QUEUES = {
     },
     "test": {  # 这是一个topic队列 凡是topictest开头的routing key都会被放到这个队列
         "routing_key": "data.msm",
-        "exchange": "data_topi",
+        "exchange": "data_topic",
         "exchange_type": "topic",
     },
     "task_eeg": {  # 设置扇形交换机

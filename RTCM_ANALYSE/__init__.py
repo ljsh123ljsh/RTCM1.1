@@ -7,6 +7,7 @@ from json import loads
 from DB import REDIS
 from pandas import DataFrame as DF
 from pandas import concat
-from RTCM_ANALYSE.RTCM import RTCM
 from stable.Tool import supplehead, segment_d30
 from threading import Thread
+from numpy import all as npall
+from numpy import array as nparray

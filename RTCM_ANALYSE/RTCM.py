@@ -2,14 +2,11 @@ from RTCM_ANALYSE import *
 r = REDIS.REDIS
 
 
-
 class RTCM:
 
     def MSM4(self, data, rtcmtype):
-        rtcm1074 = r.hgetall('rtcm1074')
-        rtcm1084 = r.hgetall('rtcm1084')
-        rtcm1094 = r.hgetall('rtcm1094')
-        rtcm1124 = r.hgetall('rtcm1124')
+        tt = 'rtcm' + str(rtcmtype)
+        DIC = r.hgetall(tt)
         # 12bits参考站ID； 30bitsGNSS历元； 1bit多点文标志； 7bits保留位； 2bits时钟校准标志； 2bits拓展时钟标志； 1bitGNSS平滑类型标志； 3bitsGNSS平滑区间  共61bits省略
         ID = data[12:24]
         print("参考站ID = {}".format(cd(ID).convertdecimal()))
@@ -26,7 +23,7 @@ class RTCM:
         # print(Nsig)
         Nsig_id = sig.map_id()
         # print(Nsig_id)
-        DIC = eval('rtcm'+rtcmtype)
+        # DIC = eval('rtcm'+rtcmtype)
         # print(DIC)
         # print(Nsig_id)
         Nsig_id = [loads(DIC[str.encode(str(x))])['FrequencyBand'] for x in Nsig_id]
@@ -65,9 +62,12 @@ class RTCM:
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
             elif i == 2:
                 p_ll = p.ConvertDecimal(least=24, symbol=True)
-                print(p_ll)
+                # print(p_ll)
             elif i == 5:  # 信噪比处理
                 p_ll = p.ConvertDecimal()
+            # else:
+            #     i += 1
+            #     continue
             dic[i] = p_ll
             datan = p.RestContent()
             i += 1
@@ -78,9 +78,10 @@ class RTCM:
             i += 1
 
         df_li = []
+        no_k_list = [3, 4]
         for k in range(len(dic.keys())):
             k += 1
-            no_k_list = [ 3, 4]  # 2,3,4暂时不处理
+             # 2,3,4暂时不处理
             if k in no_k_list:
                 continue
             df_sat_sig = DF(index=Nsig_id, columns=Nsat_id)
@@ -91,9 +92,12 @@ class RTCM:
                     j = Nsig_id.index(id_i)
                     df_sat_sig.loc[id_i, id_c] = str(dic[k][i * Nsig + j])
             df_li.append(df_sat_sig)
+            print(df_sat_sig.to_json(orient='values'))
             # print(df_sat_sig)
         res = concat(df_li, axis=0, ignore_index=False)
         print(DF(res.T))
+        print(res.to_json(orient='columns'))
+        # print(Tool.compress(res))
 
     def rtcm1005(self, data):
         ID = data[12:24]

@@ -1,13 +1,4 @@
-import asyncio
-import time
-from base64 import b64encode
-from binascii import b2a_hex
-from random import random
-from random import choice
-from configparser import ConfigParser
-from DB import RABBITMQ
-
-
+from MAIN import *
 
 def genGGA(hhddss):
     B0 = 3107.67923534
@@ -63,11 +54,13 @@ async def connect_cors():
 
 
 if __name__ == '__main__':
+    conf_path = join(abspath(dirname(dirname(__file__))), 'conf.ini')
+    print(conf_path)
     cf = ConfigParser()
     try:
-        cf.read('conf.ini', encoding='ANSI')
+        cf.read(conf_path, encoding='ANSI')
     except:
-        cf.read('conf.ini')
+        cf.read(conf_path)
     host = cf.get('ntripcaster', 'IP')
     print(host)
     port = int(cf.get('ntripcaster', 'port'))

@@ -1,5 +1,6 @@
 from RTCM_ANALYSE import *
-
+from RTCM_ANALYSE.RTCM_mini import RTCM
+# from RTCM_ANALYSE.RTCM import RTCM
 '''
 解析d30
 '''
@@ -20,13 +21,14 @@ def analyse(data):
     print("RTCM格式：{}".format(int(rtcm_type, base=2)))
     print("比特数：{};\t字节数:{}".format(length * 8, length))
     if int(rtcm_type, base=2) in [1074, 1084, 1094, 1114, 1124]:  # 1074-GPS, 1084-GLONASS, 1094-GALILEO, 1114-QZZSS, 1124-BDS
-        RTCM().MSM4(data, str(int(rtcm_type, base=2)))
+        # compressresult = Tool.dict2json_Compress(RTCM().MSM4(data, str(int(rtcm_type, base=2))), ifcompress=1)
+        print(RTCM().MSM4(data, str(int(rtcm_type, base=2))))
     elif int(rtcm_type, base=2) == 1005:
-        RTCM().rtcm1005(data)
+        print(RTCM().rtcm1005(data))
     elif int(rtcm_type, base=2) == 1007:
-        RTCM().rtcm1007(data)
+        print(RTCM().rtcm1007(data))
     elif int(rtcm_type, base=2) == 1033:
-        RTCM().rtcm1033(data)
+        print(RTCM().rtcm1033(data))
     else:
         print("暂不支持")
 

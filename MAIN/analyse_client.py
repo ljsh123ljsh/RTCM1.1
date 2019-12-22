@@ -1,13 +1,4 @@
-import asyncio
-import time
-from base64 import b64encode
-from binascii import b2a_hex
-from random import random
-from random import choice
-from stable.Tool import map_d30
-from RTCM_ANALYSE.Analyse import analyse, analyseWholeFrame
-from stable import load2redis
-from configparser import ConfigParser
+from MAIN import *
 
 '''
 模拟 + 解析
@@ -46,17 +37,19 @@ async def connect_cors():
                 Msg = await reader.read(1400)
                 Msg = b2a_hex(Msg).decode('utf-8')
                 # 打印差分数据，根据需要选择是否屏蔽
-
                 # 解算差分
                 print(Msg)
-                if not ifThread:
+                if ifThread == 1:
+                    print("多线程")
+                    # analyseWholeFrame(Msg)
                     try:
                         analyseWholeFrame(Msg)
                     except KeyError:
                         load2redis.main()
-                    except:
-                        continue
+                    finally:
+                        analyseWholeFrame(Msg)
                 else:
+                    print("单线程")
                     gen = map_d30(Msg)
                     while 1:
                         try:
@@ -67,23 +60,25 @@ async def connect_cors():
                             print("——"*50)
                             break
                         # analyse(data)
-                        # try:
-                        #      analyse(data)
-                        # except KeyError:
-                        #      load2redis.main()
-                        # except:
-                        #     continue
+                        try:
+                             analyse(data)
+                        except KeyError:
+                             load2redis.main()
+                        except:
+                            continue
                     # 解算完成
 
                 await asyncio.sleep(1)
 
 
 if __name__ == '__main__':
+    conf_path = join(abspath(dirname(dirname(__file__))), 'conf.ini')
+    print(conf_path)
     cf = ConfigParser()
     try:
-        cf.read('conf.ini', encoding='ANSI')
+        cf.read(conf_path, encoding='ANSI')
     except:
-        cf.read('conf.ini')
+        cf.read(conf_path)
     host = cf.get('ntripcaster', 'IP')
     print(host)
     port = int(cf.get('ntripcaster', 'port'))
@@ -92,9 +87,7 @@ if __name__ == '__main__':
     mountpoint = cf.get('ntripcaster', 'mountpoint')
     locaion_range = float(cf.get('client', 'range'))
     simulator_number = int(cf.get('client', 'clientnumber'))
-    ifThread = cf.get('ntripcaster', 'thread')
-
-
+    ifThread = int(cf.get('ntripcaster', 'ifthread'))
     task = [connect_cors() for i in range(simulator_number)]
     loop = asyncio.get_event_loop()
     loop.run_until_complete(asyncio.wait(task))
