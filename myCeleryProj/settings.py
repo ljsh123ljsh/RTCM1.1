@@ -8,21 +8,21 @@ from myCeleryProj import *
 # )
 # 设置详细的队列
 CELERY_QUEUES = {
-    "default": {  # 这是上面指定的默认队列
-        "exchange": "data_topic",
-        "exchange_type": "direct",
-        "routing_key": "default"
-    },
+    # "default": {  # 这是上面指定的默认队列
+    #     "exchange": "data_topic",
+    #     "exchange_type": "direct",
+    #     "routing_key": "default"
+    # },
     "test": {  # 这是一个topic队列 凡是topictest开头的routing key都会被放到这个队列
         "routing_key": "data.msm",
-        "exchange": "data_topic",
+        "exchange": "data_topic000",
         "exchange_type": "topic",
     },
-    "task_eeg": {  # 设置扇形交换机
-        "exchange": "data_topic",
-        "exchange_type": "fanout",
-        "binding_key": "tasks",
-    },
+    # "task_eeg": {  # 设置扇形交换机
+    #     "exchange": "data_topic",
+    #     "exchange_type": "fanout",
+    #     "binding_key": "tasks",
+    # }
 }
 
 CELERY_ROUTES = (
@@ -31,10 +31,11 @@ CELERY_ROUTES = (
          ("myCeleryProj.tasks.task2", {"queue": "default"}),# 将taskB任务分配至队列 tasks_B
      ],
  )
-BROKER_URL = 'amqp://{}:{}@{}:{}//'.format(rabbitmq['user'], rabbitmq['password'], rabbitmq['host'], rabbitmq['port'])
+# BROKER_URL = 'amqp://{}:{}@{}:{}//'.format(rabbitmq['user'], rabbitmq['password'], rabbitmq['host'], rabbitmq['port'])
 # print(BROKER_URL)
 # BROKER_URL = "amqp://raiky:raiky@192.168.30.88:5672//"  # 使用mq 作为消息代理
 # BROKER_URL = "amqp://raiky:raiky@192.168.30.88:5672//"
+BROKER_URL = 'redis://:{}@{}:{}/4'.format(redis['password'], redis['host'], redis['port'])
 CELERY_RESULT_BACKEND = 'redis://:{}@{}:{}/3'.format(redis['password'], redis['host'], redis['port'])
 # print(CELERY_RESULT_BACKEND)
 # CELERY_RESULT_BACKEND = "redis://:123456@192.168.30.88:6379/0"  # 任务结果存在Redis

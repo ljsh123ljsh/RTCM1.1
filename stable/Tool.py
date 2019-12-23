@@ -132,12 +132,12 @@ def dict2json_Compress(dictionary, ifcompress=1):
     :param ifcompress: 是否压缩
     :return: 字节流
     '''
+    print(getsizeof(dictionary))
     jsons = dumps(dictionary)
     jsons_bytes = bytes(jsons, encoding='utf-8')
     if ifcompress:
         print(getsizeof(compress(jsons_bytes)))
         return compress(jsons_bytes)
     else:
-        print(getsizeof(jsons_bytes))
         return jsons_bytes
 

@@ -92,12 +92,10 @@ class RTCM:
                     j = Nsig_id.index(id_i)
                     df_sat_sig.loc[id_i, id_c] = str(dic[k][i * Nsig + j])
             df_li.append(df_sat_sig)
-            print(df_sat_sig.to_json(orient='values'))
             # print(df_sat_sig)
         res = concat(df_li, axis=0, ignore_index=False)
         print(DF(res.T))
-        print(res.to_json(orient='columns'))
-        # print(Tool.compress(res))
+
 
     def rtcm1005(self, data):
         ID = data[12:24]

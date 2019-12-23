@@ -17,18 +17,35 @@ def analyse(data):
     supp = supplehead(data[0])
     data = supp + bin(int(data, base=16))[2:]
     rtcm_type = data[0:12]  # 差分电文类型12bis
-    print( "——"*30)
+    print("——"*30)
     print("RTCM格式：{}".format(int(rtcm_type, base=2)))
     print("比特数：{};\t字节数:{}".format(length * 8, length))
     if int(rtcm_type, base=2) in [1074, 1084, 1094, 1114, 1124]:  # 1074-GPS, 1084-GLONASS, 1094-GALILEO, 1114-QZZSS, 1124-BDS
         # compressresult = Tool.dict2json_Compress(RTCM().MSM4(data, str(int(rtcm_type, base=2))), ifcompress=1)
-        print(RTCM().MSM4(data, str(int(rtcm_type, base=2))))
+        # print(RTCM().MSM4(data, str(int(rtcm_type, base=2))))
+        a = RTCM().MSM4(data, str(int(rtcm_type, base=2)))
+        try:
+            print(a)
+        except:
+            pass
     elif int(rtcm_type, base=2) == 1005:
-        print(RTCM().rtcm1005(data))
+        a = RTCM().rtcm1005(data)
+        try:
+            print(a)
+        except:
+            pass
     elif int(rtcm_type, base=2) == 1007:
-        print(RTCM().rtcm1007(data))
+        a = RTCM().rtcm1007(data)
+        try:
+            print(a)
+        except:
+            pass
     elif int(rtcm_type, base=2) == 1033:
-        print(RTCM().rtcm1033(data))
+        a = RTCM().rtcm1033(data)
+        try:
+            print(a)
+        except:
+            pass
     else:
         print("暂不支持")
 

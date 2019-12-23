@@ -11,7 +11,7 @@ async def connect_cors():
         reader, writer = await connect
         EncryptionStr = b64encode(str.encode(user + ':' + password))
         header = 'GET /' + mountpoint + ' HTTP/1.1\r\nUser-Agent: NTRIP ZHDGPS\r\nAccept: */*\r\nConnection: close\r\nAuthorization: Basic ' + bytes.decode(EncryptionStr) + '\r\n\r\n'
-        # print(header)
+        print(header)
         writer.write(header.encode())
         await writer.drain()
         line = await reader.readline()
